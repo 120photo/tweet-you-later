@@ -1,3 +1,5 @@
-# Tweet You Later Take 2
+# Tweet You Later
 
-Having issue with my "tweet you later" app, taking a fresh stab at it.
+Login, setup a tweet and time... go to bed.
+
+[Live Demo](https://tyl2.herokuapp.com/)
