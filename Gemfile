@@ -67,3 +67,4 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 
 gem 'twitter'
+gem 'sidekiq'
