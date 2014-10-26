@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  has_many :tweets
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,6 +13,8 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
+      user.oauth_secret = auth.credentials.secret
       user.image = auth.info.image
     end
   end

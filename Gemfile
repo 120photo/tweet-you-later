@@ -65,3 +65,5 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
+
+gem 'twitter'
