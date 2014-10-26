@@ -8,7 +8,18 @@
 </head>
 <body>
 
-<%= yield %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li><a href="/">home</a></li>
+    <li><a href="/about">about</a></li>
+    <li><a href="#">Login with Twitter</a></li>
+  </ul>
+
+  <%= yield %>
+</div>
 
 </body>
 </html>
