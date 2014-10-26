@@ -61,6 +61,8 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    did_you_mean (0.7.0)
+      binding_of_caller
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.2)
@@ -194,6 +196,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   devise
+  did_you_mean
   faker
   figaro
   jbuilder (~> 2.0)
