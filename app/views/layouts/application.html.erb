@@ -37,7 +37,10 @@
   </ul>
 
   <% if current_user %>
-    <p>Hello <%= current_user.name %></p>
+    <p>
+      Hello <%= current_user.name %>
+      <%= image_tag(current_user.image, class: "pull-left") if current_user.image? %>
+    </p>
   <% else %>
     <p>Hi Guest</p>
   <% end %>
