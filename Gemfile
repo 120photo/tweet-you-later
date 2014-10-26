@@ -59,3 +59,8 @@ gem 'faker'
 gem 'figaro'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+
+# gems for authentication
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
