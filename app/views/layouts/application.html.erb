@@ -8,15 +8,39 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:notice] %>
+  </div>
+  <% elsif flash[:error] %>
+  <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:error] %>
+  </div>
+  <% elsif flash[:alert] %>
+  <div class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash[:alert] %>
+  </div>
+<% end %>
 
 <div class="container">
   <ul class="nav nav-tabs">
     <li><a href="/">home</a></li>
     <li><a href="/about">about</a></li>
-    <li><a href="/users/auth/twitter">Login with Twitter</a></li>
+    <% if current_user %>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><a href="/users/auth/twitter">Login with Twitter</a></li>
+    <% end %>
   </ul>
+
+  <% if current_user %>
+    <p>Hello <%= current_user.name %></p>
+  <% else %>
+    <p>Hi Guest</p>
+  <% end %>
 
   <%= yield %>
 </div>
