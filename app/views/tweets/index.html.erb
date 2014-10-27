@@ -2,10 +2,26 @@
   <h1>look, some tweets</h1>
 </div>
 
+<% if current_user %>
+
 <%= render partial: 'form' %>
 
 <ul>
   <% @tweets.each do |t| %>
-  <li>@<%= t.scheduled_time %> you will tweet: <strong><%= t.body %></strong></li>
+  <li>@<%= t.scheduled_time.strftime("%a %b %-d, %Y, @ %l:%M%p") %> you will tweet: <strong><%= t.body %></strong></li>
   <% end %>
 </ul>
+
+
+<% @tweets.each do |t| %>
+<div class="tweet-info">
+  <%= t.scheduled_time.strftime("%a %b %-d, %Y, @ %l:%M%p") %> you will tweet:</br>
+  "<strong><%= t.body %></strong>"
+</div>
+<% end %>
+
+<% else %>
+<p>
+  Please <a href="/users/auth/twitter">Login with Twitter</a> to continue.
+</p>
+<% end %>
