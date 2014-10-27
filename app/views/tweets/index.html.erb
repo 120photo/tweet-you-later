@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <h1>look, some tweets</h1>
+</div>
+
+<%= render partial: 'form' %>
+
+<ul>
+  <% @tweets.each do |t| %>
+  <li>@<%= t.scheduled_time %> you will tweet: <strong><%= t.body %></strong></li>
+  <% end %>
+</ul>

@@ -1,0 +1,5 @@
+<%= simple_form_for Tweet.new do |f| %>
+  <%= f.input :body, as: :text, required: true, placeholder: "future tweet" %>
+  <%= f.input :scheduled_time, as: :datetime, required: true %>
+  <%= f.button :submit, "Schedule Tweet" %>
+<% end %>
