@@ -32,11 +32,4 @@ class TweetsController < ApplicationController
     params.require(:tweet).permit(:body, :scheduled_time)
   end
 
-  def my_tweets
-    if current_user
-      @tweets = Tweet.all.where(user_id: current_user.id)
-      return @tweets
-    end
-  end
-
 end

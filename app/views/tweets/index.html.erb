@@ -1,27 +1,27 @@
 <div class="jumbotron">
-  <h1>look, some tweets</h1>
+  <h1>Tweet Center</h1>
+  <p>Controll your future tweets.</p>
 </div>
 
 <% if current_user %>
 
 <%= render partial: 'form' %>
 
-<ul>
-  <% @tweets.each do |t| %>
-  <li>@<%= t.scheduled_time.strftime("%a %b %-d, %Y, @ %l:%M%p") %> you will tweet: <strong><%= t.body %></strong></li>
-  <% end %>
-</ul>
+<hr>
 
-
-<% @tweets.each do |t| %>
-<div class="tweet-info">
-  <%= t.scheduled_time.strftime("%a %b %-d, %Y, @ %l:%M%p") %> you will tweet:</br>
-  "<strong><%= t.body %></strong>"
-</div>
-<% end %>
+  <table class="table table-striped table-hover">
+    <th>Scheduled Tweet</th>
+    <th>Date / Time to be Tweeted</th>
+    <% @tweets.each do |t| %>
+    <tr>
+      <td><em><%= t.body %></em></td>
+      <td><%= t.scheduled_time.strftime("%a %b %-d, %Y, %l:%M%p") %></td>
+    </tr>
+    <% end %>
+  </table>
 
 <% else %>
-<p>
-  Please <a href="/users/auth/twitter">Login with Twitter</a> to continue.
-</p>
+  <p>
+    Please <a href="/users/auth/twitter">Login with Twitter</a> to continue.
+  </p>
 <% end %>
