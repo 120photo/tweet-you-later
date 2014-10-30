@@ -1,6 +1,9 @@
 class TweetsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   def index
-    @tweets = my_tweets
+    @tweets = Tweet.all.where(user_id: current_user.id)
   end
 
   def show

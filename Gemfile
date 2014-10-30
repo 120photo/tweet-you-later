@@ -68,3 +68,4 @@ gem 'omniauth-twitter'
 
 gem 'twitter'
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil # sinatra used for sidekiq monitoring app

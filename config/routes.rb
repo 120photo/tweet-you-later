@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   resources :tweets
 
+  require 'sidekiq/web' # sidekiq monitoring app
+  mount Sidekiq::Web => '/sidekiq' # sidekiq monitoring app
+
 end
