@@ -1,5 +1,6 @@
 <%= simple_form_for Tweet.new do |f| %>
-  <%= f.input :body, as: :text, required: true, placeholder: "future tweet", input_html: { maxlength: 140 } %>
+  <%= f.input :body, as: :text, required: true, placeholder: "future tweet",
+  input_html: { maxlength: 140 }, class: "form-control" %>
   <%= f.input :scheduled_time, required: true %>
-  <%= f.button :submit, "Schedule Tweet" %>
+  <%= f.button :submit, "Schedule Tweet", class: "btn btn-primary" %>
 <% end %>

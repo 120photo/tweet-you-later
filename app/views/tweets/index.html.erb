@@ -12,9 +12,9 @@
   <table class="table table-striped table-hover">
     <th>Scheduled Tweet</th>
     <th>Date / Time to be Tweeted</th>
-    <% @tweets.each do |t| %>
+    <% @tweets.where(published: false).each do |t| %>
     <tr>
-      <td><em><%= t.body %></em></td>
+      <td><em>"<%= t.body %>"</em></td>
       <td><%= t.scheduled_time.strftime("%a %b %-d, %Y, %l:%M%p") %></td>
     </tr>
     <% end %>

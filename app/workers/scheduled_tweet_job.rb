@@ -20,5 +20,8 @@ class ScheduledTweetJob
     # use twitter client to post scheduled tweet body
     tweet_client.update(tweet.body)
 
+    # update tweets plublished status to true
+    tweet.update(published: true)
+
   end
 end
