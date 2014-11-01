@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tweet2</title>
+  <title>Tweet You Later</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -25,7 +25,7 @@
   </div>
 <% end %>
 
-<div class="container">
+
   <ul class="nav nav-tabs">
     <% if current_user %>
       <li><a href="/">home</a></li>
@@ -51,6 +51,20 @@
     <% end %>
   </div>
 
+  <div class="jumbotron">
+    <div class="container">
+
+      <% if @jumbo_h1 %>
+        <h1><%= @jumbo_h1 %></h1>
+      <% end %>
+
+      <% if @jumbo_p %>
+        <p><%= @jumbo_p %></p>
+      <% end %>
+    </div>
+  </div>
+
+<div class="container">
   <%= yield %>
 </div>
 
