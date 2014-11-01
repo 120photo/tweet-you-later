@@ -22,10 +22,19 @@ class TweetsController < ApplicationController
     redirect_to tweets_url
   end
 
-  def edit
-  end
+  def destroy
+    @tweet = Tweet.find(params[:id])
+    # @tweet = Tweet.all
+    # @tweet.destroy
 
-  def update
+    if @tweet.destroy
+      flash[:notice] = "Tweet was cancelled."
+      redirect_to '/tweets'
+    else
+      flash[:error] = "Could not delete, hope the tweet is not that bad..."
+      render :show
+    end
+
   end
 
   private

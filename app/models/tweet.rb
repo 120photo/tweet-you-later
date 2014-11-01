@@ -1,6 +1,5 @@
 class Tweet < ActiveRecord::Base
-  belongs_to :user, dependent: :destroy
-
+  belongs_to :user
   after_create :schedule_job
 
 
