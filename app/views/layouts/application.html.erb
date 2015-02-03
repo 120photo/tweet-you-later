@@ -26,17 +26,20 @@
 <% end %>
 
 
-  <ul class="nav nav-tabs">
-    <% if current_user %>
-      <li><a href="/">home</a></li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><a href="/users/auth/twitter">Login with Twitter</a></li>
-    <% end %>
-  </ul>
+  <nav class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+      <% if current_user %>
+        <li><a href="/tweets">home</a></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><a href="/users/auth/twitter">Login with Twitter</a></li>
+      <% end %>
+    </ul>
+  </nav>
 
+
+  <% if current_user %>
   <div class="user-bar row">
-    <% if current_user %>
       <div class="col-md-1">
         <%= image_tag(current_user.image, class: "pull-left img-thumbnail") if current_user.image? %>
       </div>
@@ -48,8 +51,8 @@
       <div class="col-md-8">
 
       </div>
-    <% end %>
   </div>
+  <% end %>
 
   <div class="jumbotron">
     <div class="container">

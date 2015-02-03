@@ -1,6 +1,21 @@
-<%= simple_form_for @tweet do |f| %>
-  <%= f.input :body, as: :text, required: true, placeholder: "future tweet",
-  input_html: { maxlength: 140 }, class: "form-control" %>
-  <%= f.input :scheduled_time, required: true %>
-  <%= f.button :submit, "Schedule Tweet", class: "btn btn-primary" %>
+<div class=row>
+  <%= simple_form_for @tweet do |f| %>
+  <div class="col-md-4 col-form">
+    <h2>Write Your Tweet</h2>
+    <%= f.input :body, as: :text, required: true, placeholder: "future tweet",
+    input_html: { maxlength: 140 }, class: "form-control" %>
+  </div>
+  <div class="col-md-4 col-form">
+    <h2>Schedule When to Tweet</h2>
+    <%= f.input :scheduled_time, required: true %>
+  </div>
+  <div class="col-md-4 col-form">
+    <h2>Submit Your Tweet</h2>
+    <p>
+      Don't worry, there is time to take it back.
+    </p>
+    <%= f.button :submit, "Schedule Tweet", class: "btn btn-primary" %>
+  </div>
 <% end %>
+
+</div> <!-- end row -->

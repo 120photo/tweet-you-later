@@ -1,14 +1,25 @@
 @import "bootstrap";
 
+body {
+  background-color: #FBFBEF;
+}
+
 .jumbotron {
-  background-image: url("/images/bg.jpeg");
-  background-size: cover;
-  background-position: bottom;
-  color: white;
+  background-image: url("/images/bg2.jpg");
+  // opacity: .5;
+  background-size: auto;
+  background-position: 50% 35%;
+  // background-position: center;
+  color: #fff;
+  height: 300px;
 }
 
 .user-bar {
   width: 100%;
   // clear: both;
   padding: 5px;
+}
+
+.col-form {
+  text-align: center;
 }
