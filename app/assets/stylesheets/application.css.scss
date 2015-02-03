@@ -1,5 +1,12 @@
 @import "bootstrap";
 
+.jumbotron {
+  background-image: url("/images/bg.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  color: white;
+}
+
 .user-bar {
   width: 100%;
   // clear: both;
