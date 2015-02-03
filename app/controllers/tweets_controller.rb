@@ -3,6 +3,7 @@ class TweetsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    @tweet = Tweet.new
     @tweets = Tweet.all.where(user_id: current_user.id)
     @jumbo_h1 = "Tweet Center"
     @jumbo_p = "Controll your future tweets."
