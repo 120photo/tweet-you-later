@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
@@ -47,7 +46,6 @@ group :development do
  gem 'sqlite3'
  gem 'binding_of_caller'
  gem 'better_errors'
- gem 'did_you_mean'
 end
 
 group :test do
@@ -55,6 +53,7 @@ group :test do
   gem 'capybara'
 end
 
+gem 'did_you_mean', group: [:development, :test]
 gem 'simple_form'
 gem 'faker'
 gem 'figaro'
